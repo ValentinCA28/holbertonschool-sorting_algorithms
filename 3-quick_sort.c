@@ -41,7 +41,7 @@ int partition(int array[], int min, int max, size_t size)
 			}
 		}
 	}
-	if ((i + 1) != max)
+	if ((i + 1) != max && array[i + 1] != array[max])
 	{
 		swap_node(&array[i + 1], &array[max]);
 		print_array(array, size);
