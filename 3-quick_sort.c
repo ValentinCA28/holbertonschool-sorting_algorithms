@@ -69,10 +69,11 @@ int partition(int array[], int min, int max, size_t size)
  */
 void quicksort_index(int *array, int min, int max, size_t size)
 {
-	int pivot_index = partition(array, min, max, size);
+	
 
 	if (min < max)
 	{
+		int pivot_index = partition(array, min, max, size);
 		quicksort_index(array, min, pivot_index - 1, size);
 		quicksort_index(array, pivot_index + 1, max, size);
 	}
@@ -92,7 +93,7 @@ void quicksort_index(int *array, int min, int max, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-	if (size <= 1)
-		return;
+	if (array == NULL || size < 2)
+        return;
 	quicksort_index(array, 0, (int)size - 1, size);
 }
